@@ -1,0 +1,20 @@
+subclass_name: buzzard.BuzzardGalaxyCatalog
+
+catalog_root_dir: /project/projectdirs/desi/mocks/buzzard/buzzard_v1.6_desicut/temp/
+catalog_path_template:
+    truth: '{group}/{pix}/Buzzard_v1.6_lensed-8-{pix}.fits'
+
+cosmology:
+    H0: 70.0
+    Om0: 0.286
+
+halo_mass_def: vir
+lightcone: true
+sky_area : 14000.0
+
+creators: ['Joe DeRose', 'Risa Wechsler', 'Eli Rykoff', 'Matt Becker']
+description: |
+    Buzzard galaxy catalog v1.6 (realization 0).
+    This is a ~14,000-square-degree catalog created with the ADDGALS algorithm.
+    It has galaxies to r<24.
+

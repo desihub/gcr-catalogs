@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: GCRCatalogs
+Version: 0.6.6
+Summary: Catalog repo for LSST DESC
+Home-page: https://github.com/LSSTDESC/gcr-catalogs
+Author: Yao-Yuan Mao
+Author-email: yymao.astro@gmail.com
+License: MIT
+Description: UNKNOWN
+Keywords: GCR
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.6

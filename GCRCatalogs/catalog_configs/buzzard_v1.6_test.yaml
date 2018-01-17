@@ -1,0 +1,19 @@
+subclass_name: buzzard.BuzzardGalaxyCatalog
+
+catalog_root_dir: /project/projectdirs/desi/mocks/buzzard/buzzard_v1.6_desicut/temp/
+catalog_path_template:
+    truth: '{group}/{pix}/Buzzard_v1.6_lensed-8-{pix}.fits'
+
+cosmology:
+    H0: 70.0
+    Om0: 0.286
+
+healpix_pixels: [128]
+halo_mass_def: vir
+lightcone: true
+sky_area : 53.71
+
+creators: ['Joe DeRose', 'Risa Wechsler', 'Eli Rykoff', 'Matt Becker']
+description: |
+    This is a smaller version of the Buzzard galaxy catalog v1.6 (realization 0),
+    with only one healpixel, for testing purposes.
