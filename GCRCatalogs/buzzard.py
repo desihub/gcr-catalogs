@@ -9,6 +9,7 @@ import numpy as np
 from astropy.io import fits
 from astropy.cosmology import FlatLambdaCDM
 from GCR import BaseGenericCatalog
+from GCRCatalogs import galaxytype
 
 __all__ = ['BuzzardGalaxyCatalog']
 
@@ -160,7 +161,16 @@ class BuzzardGalaxyCatalog(BaseGenericCatalog):
                 self._quantity_modifiers['Mag_true_{}_wise_z01'.format(b)] = (_abs_mask_func, 'truth/AMAG_WISE/{}'.format(i))
                 self._quantity_modifiers['mag_true_{}_wise'.format(b)] = (_mask_func, 'truth/TMAG_WISE/{}'.format(i))
                 self._quantity_modifiers['mag_lensed_{}_wise'.format(b)] = (_mask_func, 'truth/LMAG_WISE/{}'.format(i))
-
+        ##add galaxy type column
+        normalname = 'truth/OMAG/{}'
+        wisename = 'truth/TMAG_WISE/{}'
+        desiredbands=[normalname.format(0),normalname.format(1),normalname.format(2),wisename.format(0), wisename.format(1)] #grzW1W2
+        self._quantity_modifiers['is_BGS'] = (galaxytype.isBGS, desiredbands[1])  
+        self._quantity_modifiers['is_LRG'] = (galaxytype.isLRG, *desiredbands[0:4])  
+        self._quantity_modifiers['is_ELG'] = (galaxytype.isELG, *desiredbands[0:4])  
+        self._quantity_modifiers['is_QSO'] = (galaxytype.isQSO, *desiredbands)  
+        #assert False
+    
 
     def _get_healpix_pixels(self):
         path = self._catalog_path_template[self._default_subset]

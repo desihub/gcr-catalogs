@@ -9,7 +9,7 @@ import numpy as np
 from astropy.io import fits
 from astropy.cosmology import FlatLambdaCDM
 from GCR import BaseGenericCatalog
-
+import re
 __all__ = ['EZMockGalaxyCatalog']
 
 
@@ -66,6 +66,14 @@ class EZMockGalaxyCatalog(BaseGenericCatalog):
             'dec_true': 'truth/DEC',
             'redshift_true' : 'truth/Z'
         }
+        self._quantity_modifiers['is_BGS'] = (lambda x: False*x, 'truth/RA') 
+        self._quantity_modifiers['is_LRG'] = (lambda x: False*x, 'truth/RA') 
+        self._quantity_modifiers['is_ELG'] = (lambda x: False*x, 'truth/RA') 
+        self._quantity_modifiers['is_QSO'] = (lambda x: False*x, 'truth/RA') 
+        name = self._init_kwargs['catalog_path_template']['truth']
+        regex = re.compile(r"^[^_]*_(.*)[.].*$")
+        galtype = re.sub(regex,r"\1",name)
+        self._quantity_modifiers['is_{}'.format(galtype.upper())] = (lambda x: 0*x+True, 'truth/RA')
     
     def _generate_native_quantity_list(self):
         native_quantities = set()
@@ -107,6 +115,5 @@ class EZMockGalaxyCatalog(BaseGenericCatalog):
         if native_quantity:
             data = data[:,int(native_quantity.pop(0))]
 
-        print(data)
 
         return data
