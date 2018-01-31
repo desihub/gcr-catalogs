@@ -56,14 +56,15 @@ class MXXLGalaxyCatalog(BaseGenericCatalog):
         self._quantity_modifiers['mag_r_sdss'] = 'app_mag'
         self._quantity_modifiers['Mag_r_sdss'] = (lambda x : x + 5*np.log10(self.cosmology.h), 'abs_mag')
         self._quantity_modifiers['Mag_g_sdss'] = (lambda x, y : x + y + 5*np.log10(self.cosmology.h), 'g_r', 'abs_mag')
-        self._quantity_modifiers['is_BGS'] = (lambda x: False*x, 'ra') 
-        self._quantity_modifiers['is_LRG'] = (lambda x: False*x, 'ra') 
-        self._quantity_modifiers['is_ELG'] = (lambda x: False*x, 'ra') 
-        self._quantity_modifiers['is_QSO'] = (lambda x: False*x, 'ra') 
+
+        self._quantity_modifiers['is_BGS'] = (lambda x: np.zeros_like(x, dtype=np.bool), 'ra') 
+        self._quantity_modifiers['is_LRG'] = (lambda x: np.zeros_like(x, dtype=np.bool), 'ra') 
+        self._quantity_modifiers['is_ELG'] = (lambda x: np.zeros_like(x, dtype=np.bool), 'ra') 
+        self._quantity_modifiers['is_QSO'] = (lambda x: np.zeros_like(x, dtype=np.bool), 'ra') 
         name = self._init_kwargs['filename']
         regex=re.compile(r"^.*/(.*)_[^_]*$")
         galtype = re.sub(regex,r"\1",name)
-        self._quantity_modifiers['is_{}'.format(galtype.upper())] = (lambda x: 0*x+True, 'ra')
+        self._quantity_modifiers['is_{}'.format(galtype.upper())] = (lambda x: np.ones_like(x, dtype=np.bool), 'ra')
 
 
 
