@@ -26,15 +26,15 @@ First, [start a NERSC notebook server](https://jupyter-dev.nersc.gov) and open a
 
 ```python
 import sys
-sys.path.insert(0, '/global/homes/j/jderose/desi/mocks/desiqa/cori/lib/python3.5/site-packages/')
+sys.path.insert(0, '/project/projectdirs/desi/mocks/desiqa/cori/lib/python3.5/site-packages/')
 ```
 
 ### in a terminal:
 
 Activate DESIQA Python environment by running the following on NERSC (needs to be in `bash` or `zsh`):
 
-source source /project/projectdirs/desi/software/desi_environment.sh
-export PYTHONPATH=/global/homes/j/jderose/desi/mocks/desiqa/cori/lib/python3.5/site-packages/:$PYTHONPATH
+source /project/projectdirs/desi/software/desi_environment.sh
+export PYTHONPATH=/project/projectdirs/desi/mocks/desiqa/cori/lib/python3.5/site-packages/:$PYTHONPATH
 
 ### with a python script: 
 
@@ -42,7 +42,7 @@ To be able to import `GCRCatalogs`, make sure you first source the desi environm
 #!/usr/bin/env python
 ```python
 import sys
-sys.path.insert(0, '/global/homes/j/jderose/desi/mocks/desiqa/cori/lib/python3.5/site-packages/')
+sys.path.insert(0, '/project/projectdirs/desi/mocks/desiqa/cori/lib/python3.5/site-packages/')
 ```
 
 ## Install GCRCatalogs on your own
@@ -71,15 +71,15 @@ But note that the actual catalogs can only be accessed on a NERSC machine.
 
        cd /your/own/directory
        git clone git@github.com:YourGitHubUsername/gcr-catalogs.git
-       git remote add upstream https://github.com/j-dr/gcr-catalogs.git
+       git remote add upstream https://github.com/desihub/gcr-catalogs.git
 
 
 3. Sync with the upstream master branch
 
        cd /your/own/directory/gcr-catalogs
-       git checkout desi
-       git pull upstream desi
-       git push origin desi
+       git checkout master
+       git pull upstream master
+       git push origin master
 
 4. Create a new branch for this edit:
 
