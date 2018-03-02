@@ -49,7 +49,7 @@ sys.path.insert(0, '/project/projectdirs/desi/mocks/desiqa/cori/lib/python3.5/si
 
 You can install the latest version by running (but note that you need to change the python paths accordingly) 
 
-    pip install https://github.com/j-dr/gcr-catalogs/archive/desi.zip
+    pip install https://github.com/j-dr/gcr-catalogs/archive/master.zip
 
 But note that the actual catalogs can only be accessed on a NERSC machine. 
 
