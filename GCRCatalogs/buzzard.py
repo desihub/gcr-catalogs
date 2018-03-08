@@ -164,7 +164,7 @@ class BuzzardGalaxyCatalog(BaseGenericCatalog):
         ##add galaxy type column
         normalname = 'truth/OMAG/{}'
         wisename = 'truth/TMAG_WISE/{}'
-        desiredbands=[normalname.format(0),normalname.format(1),normalname.format(2),wisename.format(0), wisename.format(1)] #grzW1W2
+        desiredbands=[normalname.format(0),normalname.format(1),normalname.format(3),wisename.format(0), wisename.format(1)] #grzW1W2
         self._quantity_modifiers['is_BGS'] = (galaxytype.isBGS, desiredbands[1])  
         self._quantity_modifiers['is_LRG'] = (galaxytype.isLRG, *desiredbands[0:4])  
         self._quantity_modifiers['is_ELG'] = (galaxytype.isELG, *desiredbands[0:3])  
