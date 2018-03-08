@@ -8,7 +8,7 @@ def isLRG(g,r,z,w1):
 
    gflux = 10**((22.5 - g) / 2.5)
    rflux = 10**((22.5 - r) / 2.5)
-   zflux = 10**((22.5 - z]) / 2.5)
+   zflux = 10**((22.5 - z) / 2.5)
    w1flux = 10**((22.5 - w1) / 2.5)
 
    primary = np.ones_like(rflux, dtype='?')
