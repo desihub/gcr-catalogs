@@ -1,6 +1,6 @@
 subclass_name: buzzard.BuzzardGalaxyCatalog
 
-catalog_root_dir: /project/projectdirs/desi/mocks/buzzard/buzzard_v1.6_desicut/temp/
+catalog_root_dir: /project/projectdirs/desi/mocks/buzzard/buzzard_v1.6_desicut/8/
 catalog_path_template:
     truth: '{group}/{pix}/Buzzard_v1.6_lensed-8-{pix}.fits'
 
