@@ -6,10 +6,10 @@ def isBGS(r):
 
 def isLRG(g,r,z,w1):
 
-   gflux = 10**((22.5 - data['mag_g_des']) / 2.5)
-   rflux = 10**((22.5 - data['mag_r_des']) / 2.5)
-   zflux = 10**((22.5 - data['mag_z_des']) / 2.5)
-   w1flux = 10**((22.5 - data['mag_true_W1_wise']) / 2.5)
+   gflux = 10**((22.5 - g) / 2.5)
+   rflux = 10**((22.5 - r) / 2.5)
+   zflux = 10**((22.5 - z]) / 2.5)
+   w1flux = 10**((22.5 - w1) / 2.5)
 
    primary = np.ones_like(rflux, dtype='?')
    ggood = np.ones_like(gflux, dtype='?')
@@ -38,9 +38,9 @@ def isLRG(g,r,z,w1):
 
 def isELG(g,r,z):
 
-   gflux = 10**((22.5 - data['mag_g_des']) / 2.5)
-   rflux = 10**((22.5 - data['mag_r_des']) / 2.5)
-   zflux = 10**((22.5 - data['mag_z_des']) / 2.5)
+   gflux = 10**((22.5 - g) / 2.5)
+   rflux = 10**((22.5 - r) / 2.5)
+   zflux = 10**((22.5 - z) / 2.5)
 
    primary = np.ones_like(gflux, dtype='?')
    mask = primary.copy()
