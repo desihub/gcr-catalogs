@@ -1,7 +1,7 @@
 import numpy as np
 
 def isBGS(r):
-   mask = r < 19.45
+   mask = r < 20
    return mask
 
 def isLRG(g,r,z,w1):
