@@ -13,6 +13,11 @@ Currently these sets of catalogs are available (**Note that these catalogs are n
    - `buzzard_test` (same as `buzzard` but a small subset for testing purpose)
    - `buzzard_high-res` (higher resolution, smaller sky area)
    - `buzzard_v1.6`
+2. EZMocks
+   created by Albert Chuang and Marcos Pellejero Ibanez
+3. MXXL BGS
+   created by Alex Smith, Shaun Cole, Carlton Baugh, Zheng Zheng, Raul Angulo, Peder Norberg, and Idit Zehavi
+   
       
 Each of the catalogs is specified by a YAML config file, which can be found [here](https://github.com/j-dr/gcr-catalogs/tree/desi/GCRCatalogs/catalog_configs). The galaxy quantities in these catalogs conform to [this schema](https://docs.google.com/document/d/1rUsImkBkjjw82Xa_-3a8VMV6K9aYJ8mXioaRhz0JoqI/edit).
 
@@ -26,7 +31,7 @@ First, [start a NERSC notebook server](https://jupyter-dev.nersc.gov) and open a
 
 ```python
 import sys
-sys.path.insert(0, '/project/projectdirs/desi/mocks/desiqa/cori/lib/python3.5/site-packages/')
+sys.path.insert(0, '/project/projectdirs/desi/mocks/desiqa/cori/lib/python3.6/site-packages/')
 ```
 
 ### in a terminal:
@@ -34,7 +39,7 @@ sys.path.insert(0, '/project/projectdirs/desi/mocks/desiqa/cori/lib/python3.5/si
 Activate DESIQA Python environment by running the following on NERSC (needs to be in `bash` or `zsh`):
 
 source /project/projectdirs/desi/software/desi_environment.sh
-export PYTHONPATH=/project/projectdirs/desi/mocks/desiqa/cori/lib/python3.5/site-packages/:$PYTHONPATH
+export PYTHONPATH=/project/projectdirs/desi/mocks/desiqa/cori/lib/python3.6/site-packages/:$PYTHONPATH
 
 ### with a python script: 
 
@@ -42,23 +47,23 @@ To be able to import `GCRCatalogs`, make sure you first source the desi environm
 #!/usr/bin/env python
 ```python
 import sys
-sys.path.insert(0, '/project/projectdirs/desi/mocks/desiqa/cori/lib/python3.5/site-packages/')
+sys.path.insert(0, '/project/projectdirs/desi/mocks/desiqa/cori/lib/python3.6/site-packages/')
 ```
 
 ## Install GCRCatalogs on your own
 
 You can install the latest version by running (but note that you need to change the python paths accordingly) 
 
-    pip install https://github.com/j-dr/gcr-catalogs/archive/master.zip
+    pip install https://github.com/desihub/gcr-catalogs/archive/master.zip
 
 But note that the actual catalogs can only be accessed on a NERSC machine. 
 
 
 ## Usage and examples
 
-- See [this notebook](https://github.com/j-dr/gcr-catalogs/blob/desi/examples/GCRCatalogs%20Demo.ipynb) for a tutorial on how to use GCR Catalogs.
+- See [this notebook](https://github.com/desihub/gcr-catalogs/blob/desi/examples/GCRCatalogs%20Demo.ipynb) for a tutorial on how to use GCR Catalogs.
 
-- See [this notebook](https://github.com/j-dr/gcr-catalogs/blob/desi/examples/CLF%20Test.ipynb) for an actual application (the Conditional  Luminosity Function test) using GCR Catalogs. (Thanks to Joe DeRose for providing the CLF test example!)
+- See [this notebook](https://github.com/desihub/gcr-catalogs/blob/desi/examples/CLF%20Test.ipynb) for an actual application (the Conditional  Luminosity Function test) using GCR Catalogs. (Thanks to Joe DeRose for providing the CLF test example!)
 
 - See [GCR documentation](https://yymao.github.io/generic-catalog-reader/index.html) for the complete GCR API.
 
