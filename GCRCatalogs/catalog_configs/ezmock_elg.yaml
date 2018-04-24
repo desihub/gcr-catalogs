@@ -1,17 +1,15 @@
 subclass_name: EZmocks.EZMockGalaxyCatalog
 
-catalog_root_dir: /global/project/projectdirs/desi/users/chuang/EZmock/first_mocks/
-catalog_path_template:
-   truth : 'EZmock_ELG.fits'
+filename: /global/project/projectdirs/desi/users/chuang/EZmock/first_mocks/EZmock_ELG.rdz
 
 cosmology:
     H0: 70.0
     Om0: 0.286
 
-halo_mass_def: vir
 lightcone: true
 sky_area : 14000.0
 
 creators: ['Chia-Hsun Chuang', 'Marcos Pellejero', 'Risa Wechsler']
 description: |
    Mocks generated using the EZmock algorithm. See here for more information https://desi.lbl.gov/trac/wiki/ClusteringWG/EZmocks
+included_by_default: true
