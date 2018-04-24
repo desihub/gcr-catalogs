@@ -4,19 +4,13 @@ filename : /project/projectdirs/desi/mocks/bgs/MXXL/desi_footprint/v0.0.4/BGS_r2
 version  : '0.4'
 
 cosmology:
-    H_0: 70.0
-    Omega_matter: 0.286
-    Omega_b: 0.04
+    H0: 70.0
+    Om0: 0.286
+    Ob0: 0.04
 
-metadata :
-    versionMajor : 0
-    versionMinor : 4
-
-halo_mass_def: vir
 lightcone: true
-sky_area : 14000.00
-
 
 creators: ['Alex Smith', 'Shaun Cole', 'Carlton Baugh', 'Zheng Zheng', 'Raul Angulo', 'Peder Norberg', 'Idit Zehavi']
 description: |
              A catalog built on top of MXXL cut to the DESI footprint and a magnitude limit appropriate for BGS.
+included_by_default: true
